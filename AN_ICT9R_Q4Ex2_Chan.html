@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Javascript Page</title>
+</head>
+<body>
+	<h1>Introduction to Javascript</h1>
+	<img src="https://storage.googleapis.com/oa_disk001/obangeles/68/documents/class-815/folder-5711/1679965988-3326.JPG" width="400" height="200">
+	<p>JavaScript is a programming language that is commonly used to create interactive and dynamic web pages. It is a client-side scripting language, which means that it runs on the client-side or the browser, rather than on the server-side. JavaScript is widely used in web development and can be used for a wide range of applications, including creating web-based games.</p>
+
+	<h2>Types of Javascript Outputs</h2>
+	<p>There are three types of Javascript outputs:</p>
+	<ul>
+		<li>Alert Box</li>
+		<li>Console</li>
+		<li>HTML Output</li>
+	</ul>
+
+	<h3>Alert Box Output</h3>
+	<button onclick="alert('Hi Maam!')">Click me to show an alert</button>
+
+	<h3>Console Output</h3>
+	<p>Open the console in your browser to see the console output (f12):</p>
+	<script>
+		console.log('Hello Maam Santos!');
+	</script>
+
+	<h3>HTML Output</h3>
+	<p>Click the button to change the text:</p>
+	<button onclick="document.getElementById('demo').innerHTML = 'Hi Maam!'">Click me</button>
+	<p id="demo"></p>
+
+	<h2>Images</h2>
+	<p>JavaScript can be used to dynamically change images on a webpage. Here are some examples:</p>
+
+	<h3>Changing Image on Click</h3>
+	<p>Click the image below to see how JavaScript can change it:</p>
+	<img id="myImage" onclick="changeImage()" src="https://www.w3schools.com/js/pic_bulboff.gif" width="200" height="200">
+	<script>
+		function changeImage() {
+			var image = document.getElementById('myImage');
+			if (image.src.match("bulbon")) {
+				image.src = "https://www.w3schools.com/js/pic_bulboff.gif";
+			} else {
+				image.src = "https://www.w3schools.com/js/pic_bulbon.gif";
+			}
+		}
+	</script>
+	</div>
+</body>
+</html>
