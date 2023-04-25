@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Quiz Mansion</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f2f2f2;
+		}
+		h1, h2 {
+			text-align: center;
+			margin-top: 30px;
+			margin-bottom: 30px;
+		}
+		.container {
+			max-width: 600px;
+			margin: auto;
+			padding: 20px;
+			background-color: white;
+			box-shadow: 0px 0px 5px grey;
+		}
+		.question {
+			font-weight: bold;
+			margin-bottom: 20px;
+		}
+		.answer {
+			display: block;
+			margin-bottom: 10px;
+		}
+		.answer input[type="radio"] {
+			margin-right: 10px;
+		}
+		.btn {
+			display: inline-block;
+			padding: 8px 20px;
+			font-size: 16px;
+			font-weight: bold;
+			text-align: center;
+			text-decoration: none;
+			background-color: #4CAF50;
+			color: white;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+			margin-top: 20px;
+		}
+		.btn:hover {
+			background-color: #3e8e41;
+		}
+		.correct {
+			color: green;
+			font-weight: bold;
+		}
+		.wrong {
+			color: red;
+			font-weight: bold;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1>Quiz Mansion</h1>
+			<div class="question">
+				<h2>Question 3:</h2>
+				<p>Which of the following is not a JavaScript data type?</p>
+			</div>
+			<div class="answer">
+				<input type="radio" name="q3" value="string">String<br>
+				<input type="radio" name="q3" value="boolean">Boolean<br>
+				<input type="radio" name="q3" value="number">Number<br>
+				<input type="radio" name="q3" value="function">Function<br>
+			</div>
+			<button class="btn" onclick="checkAnswer()">Submit</button>
+	</div>
+
+	<script>
+		function checkAnswer() {
+			var answer = document.querySelector('input[name="q3"]:checked').value;
+			if (answer === "function") {
+				alert("Correct!");
+				window.location.href = "ChanQ4.html";
+			} else {
+				alert("Wrong! Please try again.");
+			}
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Unit Conversion</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <style>
+      .container {
+        max-width: 500px;
+        margin: 0 auto;
+      }
+
+      h1 {
+        text-align: center;
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+      }
+
+      .btn-primary {
+        margin-top: 10px;
+      }
+
+      #outputValue {
+        background-color: #f8f9fa;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Unit Conversion</h1>
+      <div class="form-group">
+        <label for="inputValue">Input Value</label>
+        <input
+          type="number"
+          class="form-control"
+          id="inputValue"
+          placeholder="Enter input value"
+        />
+      </div>
+      <div class="form-group">
+        <label for="inputUnit">Input Unit</label>
+        <select class="form-control" id="inputUnit">
+          <option value="m">Meter</option>
+          <option value="cm">Centimeter</option>
+          <option value="km">Kilometer</option>
+          <option value="ft">Foot</option>
+          <option value="in">Inch</option>
+          <option value="mi">Mile</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="outputUnit">Output Unit</label>
+        <select class="form-control" id="outputUnit">
+          <option value="m">Meter</option>
+          <option value="cm">Centimeter</option>
+          <option value="km">Kilometer</option>
+          <option value="ft">Foot</option>
+          <option value="in">Inch</option>
+          <option value="mi">Mile</option>
+        </select>
+      </div>
+      <button class="btn btn-primary" onclick="convert()">Convert</button>
+      <div class="form-group mt-3">
+        <label for="outputValue">Output Value</label>
+        <input
+          type="number"
+          class="form-control"
+          id="outputValue"
+          placeholder="Output value"
+          readonly
+        />
+      </div>
+    </div>
+    <script>
+      function convert() {
+        let inputValue = document.getElementById("inputValue").value;
+        let inputUnit = document.getElementById("inputUnit").value;
+        let outputUnit = document.getElementById("outputUnit").value;
+
+        if (inputUnit === outputUnit) {
+          document.getElementById("outputValue").value = inputValue;
+          return;
+        }
+
+        let meterValue = 0;
+        switch (inputUnit) {
+          case "m":
+            meterValue = inputValue;
+            break;
+          case "cm":
+            meterValue = inputValue / 100;
+            break;
+          case "km":
+            meter
+          case "ft":
+            meterValue = inputValue / 3.2808;
+            break;
+          case "in":
+            meterValue = inputValue / 39.370;
+            break;
+          case "mi":
+            meterValue = inputValue * 1609.34;
+            break;
+          default:
+            break;
+        }
+
+        let outputValue = 0;
+        switch (outputUnit) {
+          case "m":
+            outputValue = meterValue;
+            break;
+          case "cm":
+            outputValue = meterValue * 100;
+            break;
+          case "km":
+            outputValue = meterValue / 1000;
+            break;
+          case "ft":
+            outputValue = meterValue * 3.2808;
+            break;
+          case "in":
+            outputValue = meterValue * 39.370;
+            break;
+          case "mi":
+            outputValue = meterValue / 1609.34;
+            break;
+          default:
+            break;
+        }
+
+        document.getElementById("outputValue").value = outputValue.toFixed(2);
+      }
+    </script>
+  </body>
+</html>
+

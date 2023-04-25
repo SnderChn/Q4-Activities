@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Computation Example</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+  <style>
+    body {
+      padding: 20px;
+    }
+    h1 {
+      margin-bottom: 30px;
+    }
+    .result {
+      font-size: 18px;
+      margin-top: 20px;
+    }
+  </style>
+
+</head>
+<body>
+
+  <div class="container">
+
+    <h1>Computation Example</h1>
+
+    <div class="row">
+      <div class="col-sm-4">
+        <h4>First Number</h4>
+        <input type="number" id="firstNum" class="form-control" value="10">
+      </div>
+      <div class="col-sm-4">
+        <h4>Second Number</h4>
+        <input type="number" id="secondNum" class="form-control" value="5">
+      </div>
+      <div class="col-sm-4">
+        <h4>Operations</h4>
+        <button type="button" onclick="compute()" class="btn btn-primary">Compute</button>
+      </div>
+    </div>
+
+    <div class="row result">
+      <div class="col-sm-4">
+        <h4>Sum</h4>
+        <p id="sum"></p>
+      </div>
+      <div class="col-sm-4">
+        <h4>Difference</h4>
+        <p id="difference"></p>
+      </div>
+      <div class="col-sm-4">
+        <h4>Product</h4>
+        <p id="product"></p>
+      </div>
+    </div>
+
+    <div class="row result">
+      <div class="col-sm-4">
+        <h4>Quotient</h4>
+        <p id="quotient"></p>
+      </div>
+      <div class="col-sm-4">
+        <h4>Modulus</h4>
+        <p id="modulus"></p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+  <script>
+    function compute() {
+      // Get the values of the first and second numbers
+      var firstNum = parseInt(document.getElementById("firstNum").value);
+      var secondNum = parseInt(document.getElementById("secondNum").value);
+
+      // Compute the sum, difference, product, quotient, and modulus
+      var sum = firstNum + secondNum;
+      var difference = firstNum - secondNum;
+      var product = firstNum * secondNum;
+      var quotient = firstNum / secondNum;
+      var modulus = firstNum % secondNum;
+
+      // Display the computed values in the HTML page
+      document.getElementById("sum").innerHTML = sum;
+      document.getElementById("difference").innerHTML = difference;
+      document.getElementById("product").innerHTML = product;
+      document.getElementById("quotient").innerHTML
+      = quotient;
+      document.getElementById("modulus").innerHTML = modulus;
+}
+  </script>
+</body>
+</html>

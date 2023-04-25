@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Quiz Mansion - Question 2</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<!-- jQuery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<!-- Bootstrap JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<!-- Custom CSS -->
+	<style>
+		body {
+			background-color: #f9f9f9;
+			font-family: Arial, sans-serif;
+		}
+		.container {
+			margin-top: 50px;
+			margin-bottom: 50px;
+		}
+		.question {
+			font-size: 24px;
+			font-weight: bold;
+			margin-bottom: 20px;
+		}
+		.answer-option {
+			margin-bottom: 10px;
+		}
+		.answer-option label {
+			font-size: 18px;
+			margin-left: 10px;
+		}
+		.answer-option input[type="radio"] {
+			margin-top: 6px;
+			margin-left: 20px;
+		}
+		.btn-next {
+			margin-top: 20px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="question">Question 2: What is the output of the following code?</div>
+		<pre>var x = 5;
+		var y = x + 2;
+		console.log(y);</pre>
+		<form>
+			<div class="answer-option">
+				<label><input type="radio" name="answer" value="7"> 7</label>
+			</div>
+			<div class="answer-option">
+				<label><input type="radio" name="answer" value="52"> 52</label>
+			</div>
+			<div class="answer-option">
+				<label><input type="radio" name="answer" value="undefined"> undefined</label>
+			</div>
+			<div class="answer-option">
+				<label><input type="radio" name="answer" value="NaN"> NaN</label>
+			</div>
+			<button type="button" class="btn btn-primary btn-next">Next</button>
+		</form>
+	</div>
+	<script>
+		$(document).ready(function(){
+			$(".btn-next").click(function(){
+				var selected_answer = $("input[name='answer']:checked").val();
+				if(selected_answer === "7") {
+					alert("Correct!");
+					window.location.href = "ChanQ3.html";
+				}
+				else {
+					alert("Wrong!");
+					window.location.href = "ChanWrong.html";
+				}
+			});
+		});
+	</script>
+</body>
+</html>

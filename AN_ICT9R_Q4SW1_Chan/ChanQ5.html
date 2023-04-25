@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Quiz Mansion - Question 5</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript">
+		function checkAnswer() {
+			var radios = document.getElementsByName("answer");
+			var answer = "";
+			for (var i = 0; i < radios.length; i++) {
+				if (radios[i].checked) {
+					answer = radios[i].value;
+					break;
+				}
+			}
+			if (answer === "Correct") {
+				alert("Correct!");
+				window.location.href = "ChanQ6.html";
+			} else {
+				alert("Wrong!");
+				window.location.href = "ChanWrong.html";
+			}
+		}
+	</script>
+</head>
+<body>
+	<div class="container">
+		<h1>Question 5:</h1>
+		<h3>What is the correct way to write a function in JavaScript?</h3>
+		<form>
+			<div class="form-check">
+				<label class="form-check-label">
+					<input type="radio" class="form-check-input" name="answer" value="function myFunction() {};">function myFunction() {};</label>
+			</div>
+			<div class="form-check">
+				<label class="form-check-label">
+					<input type="radio" class="form-check-input" name="answer" value="myFunction() = function {};">myFunction() = function {};</label>
+			</div>
+			<div class="form-check">
+				<label class="form-check-label">
+					<input type="radio" class="form-check-input" name="answer" value="function = myFunction() {};">function = myFunction() {};</label>
+			</div>
+			<div class="form-check">
+				<label class="form-check-label">
+					<input type="radio" class="form-check-input" name="answer" value="myFunction = function() {};">myFunction = function() {};</label>
+			</div>
+			<button type="button" class="btn btn-primary" onclick="checkAnswer()">Submit</button>
+		</form>
+	</div>
+</body>
+</html>
