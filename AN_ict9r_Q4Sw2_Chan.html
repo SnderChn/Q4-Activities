@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Weather and Temperature Converter</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container mt-5">
+    <h1 class="mb-3">Weather and Temperature Converter of Sander</h1>
+    <div class="form-group">
+      <label for="temperature">Enter temperature in Fahrenheit:</label>
+      <input type="number" id="temperature" class="form-control">
+    </div>
+    <button type="button" onclick="convertTemperature()" class="btn btn-primary">Convert</button>
+    <p id="result" class="mt-3"></p>
+    <p id="description" class="mt-3"></p>
+    <p id="datetime" class="mt-3"></p>
+  </div>
+  <script>
+    function convertTemperature() {
+      var fahrenheit = document.getElementById("temperature").value;
+      if (!fahrenheit) {
+        document.getElementById("result").innerHTML = "Please enter a temperature in Fahrenheit.";
+        return;
+      }
+      var celsius = (fahrenheit - 32) * 5/9;
+      document.getElementById("result").innerHTML = fahrenheit + "&#8457; = " + celsius.toFixed(2) + "&#8451;";
+      if (celsius < -273.15) {
+        document.getElementById("description").innerHTML = "This temperature is below absolute zero, which is the lowest possible temperature.";
+      } else if (celsius < 0) {
+        document.getElementById("description").innerHTML = "This temperature is below freezing.";
+      } else if (celsius < 10) {
+        document.getElementById("description").innerHTML = "This temperature is very cold.";
+      } else if (celsius < 20) {
+        document.getElementById("description").innerHTML = "This temperature is cold.";
+      } else if (celsius < 25) {
+        document.getElementById("description").innerHTML = "This temperature is cool.";
+      } else if (celsius < 30) {
+        document.getElementById("description").innerHTML = "This temperature is moderate.";
+      } else if (celsius < 35) {
+        document.getElementById("description").innerHTML = "This temperature is warm.";
+      } else if (celsius < 40) {
+        document.getElementById("description").innerHTML = "This temperature is hot.";
+      } else {
+        document.getElementById("description").innerHTML = "This temperature is extremely hot.";
+      }
+    }
+    function displayDateTime() {
+      var now = new Date();
+      var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', timeZone: 'Asia/Manila' };
+      var date = now.toLocaleDateString('en-PH', options);
+      document.getElementById("datetime").innerHTML = "Current Date and Time: " + date;
+    }
+    displayDateTime();
+  </script>
+</body>
+</html>
+
+
